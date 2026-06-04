@@ -5,4 +5,9 @@
 ・自分石→相手石→空マスを満たす空マスが合法手
 ・ player << 1（自分の石の1bitシフト）、horizontalWatchBoard（相手石のうち返る可能性のあるもの）、それらの＆は返るべき石がそこにある場合bitが立っているbitboard、tmpは今まで見つかった返る可能性のあるbitboard。続けて、返る可能性のある石から1bitシフトさせたマスがhorizontalWatchBoardと一致しているかを見てtmpに加算する。最後にtmpが空かどうかを確認して、空の場合bitが立つようなbitboard生成する。
 
-〇
+〇着手
+・ 置いた場所 put から8方向を調べる
+・ その方向に相手石が連続している間、rev_ に記録する
+・ 相手石列の先に自分石があれば、その方向の rev_ は本当に反転できる
+・ 全方向の反転石を rev にまとめる
+・ playerBoard と opponentBoard を更新する
